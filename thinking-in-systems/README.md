@@ -34,4 +34,6 @@ For GitHub Pages, after merging the PR, choose **Settings → Pages → Deploy f
 
 The deterministic models are in `models.js` and tested with Node’s built-in test runner. `app.js` connects them to accessible native controls and SVG charts. `styles.css` includes mobile layouts, keyboard focus states, reduced-motion support, and print styles. Progress uses a single versioned local-storage key and falls back to in-memory state when storage is blocked.
 
+The visual system uses OKLCH tokens for deep-ink surfaces, teal actions and connections, and cyan chart accents. Inline diagrams share those tokens; print styles switch to light surfaces and dark text. `PRODUCT.md` records the guide’s design context for Impeccable.
+
 The guide is unaffiliated with the author’s estate or publisher and is a starting point for reading the book, not a substitute for it.
