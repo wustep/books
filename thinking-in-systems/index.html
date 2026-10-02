@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#234f43">
+  <meta name="theme-color" content="oklch(20% 0.025 240)">
   <meta name="description" content="See the connections. An illustrated, interactive field guide to stocks, feedback, delays, leverage points, and the ideas of Donella Meadows' Thinking in Systems.">
   <meta property="og:title" content="Thinking in Systems — An interactive field guide">
   <meta property="og:description" content="Six ideas to help you see the world a little differently. Explore the work of Donella Meadows through hands-on experiments.">
@@ -60,29 +60,29 @@
             <title id="garden-title">A garden is more than its parts</title>
             <desc id="garden-description">Rain adds soil moisture. Moisture supports plants, which add organic matter that helps soil retain water. This is a reinforcing feedback loop. Evaporation takes water away.</desc>
             <defs>
-              <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#cbd3c5"/></pattern>
-              <marker id="garden-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1 8 5 1 9" fill="none" stroke="#527064" stroke-width="1.5"/></marker>
+              <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="var(--line)"/></pattern>
+              <marker id="garden-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1 8 5 1 9" fill="none" stroke="var(--teal)" stroke-width="1.5"/></marker>
             </defs>
-            <circle cx="250" cy="224" r="188" fill="#e7ecdf"/>
+            <circle cx="250" cy="224" r="188" fill="var(--surface-raised)"/>
             <circle cx="250" cy="224" r="188" fill="url(#dots)" opacity=".65"/>
-            <circle cx="250" cy="224" r="147" fill="none" stroke="#d3dccb"/>
-            <circle cx="250" cy="224" r="106" fill="none" stroke="#d3dccb"/>
-            <path d="M178 175C245 130 331 167 344 224M334 289C310 348 221 362 167 322M124 268C100 232 107 207 127 187" fill="none" stroke="#527064" stroke-width="1.7" marker-end="url(#garden-arrow)"/>
-            <path d="M134 103 142 139M158 87 169 129M183 103 190 126" stroke="#8aa19c" stroke-width="2" stroke-linecap="round"/>
-            <g fill="#f6f5ed" stroke="#859b8d" stroke-width="1.4"><path d="M105 87C95 67 112 51 129 57 129 34 167 33 174 55 196 52 207 82 188 89Z"/></g>
+            <circle cx="250" cy="224" r="147" fill="none" stroke="var(--line)"/>
+            <circle cx="250" cy="224" r="106" fill="none" stroke="var(--line)"/>
+            <path d="M178 175C245 130 331 167 344 224M334 289C310 348 221 362 167 322M124 268C100 232 107 207 127 187" fill="none" stroke="var(--teal)" stroke-width="1.7" marker-end="url(#garden-arrow)"/>
+            <path d="M134 103 142 139M158 87 169 129M183 103 190 126" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round"/>
+            <g fill="var(--panel)" stroke="var(--control-line)" stroke-width="1.4"><path d="M105 87C95 67 112 51 129 57 129 34 167 33 174 55 196 52 207 82 188 89Z"/></g>
             <text x="91" y="27" class="art-label">RAINFALL</text>
-            <g transform="translate(65 145)"><rect width="163" height="72" rx="9" fill="#f5df9d" stroke="#e1c783"/><path d="M25 21C25 21 15 35 15 41A10 10 0 0 0 35 41C35 35 25 21Z" fill="none" stroke="#826b31" stroke-width="1.5"/><text x="47" y="33" class="art-node">Soil moisture</text><text x="47" y="52" class="art-small">a stock of water</text></g>
-            <g transform="translate(280 237)"><rect width="164" height="73" rx="9" fill="#c7d7b8" stroke="#aabb9b"/><path d="M28 53V24M28 37C16 38 14 28 14 28 27 25 28 37ZM28 30C28 18 39 17 39 17 42 29 28 30Z" fill="none" stroke="#4d6942" stroke-width="1.5"/><text x="50" y="33" class="art-node">Plant growth</text><text x="50" y="52" class="art-small">life taking root</text></g>
-            <g transform="translate(69 294)"><rect width="175" height="72" rx="9" fill="#ebc5ad" stroke="#d6ad96"/><path d="M20 47C15 28 30 19 35 20 38 41 20 47 20 47ZM20 47 31 29" fill="none" stroke="#966346" stroke-width="1.5"/><text x="46" y="32" class="art-node">Organic matter</text><text x="46" y="51" class="art-small">richer, living soil</text></g>
-            <circle cx="242" cy="251" r="18" fill="#f6f5ed" stroke="#acbba4"/><text x="242" y="257" text-anchor="middle" fill="#476440" font-size="17" font-family="Georgia,serif">R</text>
+            <g transform="translate(65 145)"><rect width="163" height="72" rx="9" fill="var(--surface-selected)" stroke="var(--control-line)"/><path d="M25 21C21 27 15 35 15 41A10 10 0 0 0 35 41C35 35 29 27 25 21Z" fill="none" stroke="var(--cyan)" stroke-width="1.5"/><text x="47" y="33" class="art-node">Soil moisture</text><text x="47" y="52" class="art-small">a stock of water</text></g>
+            <g transform="translate(280 237)"><rect width="164" height="73" rx="9" fill="var(--surface-raised)" stroke="var(--control-line)"/><path d="M28 53V24M28 37C19 39 14 33 14 28C23 26 28 30 28 37ZM28 30C27 22 32 18 39 17C42 26 36 31 28 30Z" fill="none" stroke="var(--teal)" stroke-width="1.5"/><text x="50" y="33" class="art-node">Plant growth</text><text x="50" y="52" class="art-small">life taking root</text></g>
+            <g transform="translate(69 294)"><rect width="175" height="72" rx="9" fill="var(--surface-selected)" stroke="var(--control-line)"/><path d="M20 47C15 28 30 19 35 20 38 41 20 47 20 47ZM20 47 31 29" fill="none" stroke="var(--teal)" stroke-width="1.5"/><text x="46" y="32" class="art-node">Organic matter</text><text x="46" y="51" class="art-small">richer, living soil</text></g>
+            <circle cx="242" cy="251" r="18" fill="var(--panel)" stroke="var(--control-line)"/><text x="242" y="257" text-anchor="middle" fill="var(--teal)" font-size="17" font-family="Georgia,serif">R</text>
             <text x="278" y="167" class="art-small" transform="rotate(24 278 167)">supports</text>
             <text x="278" y="355" class="art-small" transform="rotate(-18 278 355)">enriches</text>
             <text x="33" y="258" class="art-small">retains water</text>
-            <path d="M219 142C265 111 305 106 333 92" fill="none" stroke="#8e9b7d" stroke-width="1.3" stroke-dasharray="4 5" marker-end="url(#garden-arrow)"/>
+            <path d="M219 142C265 111 305 106 333 92" fill="none" stroke="var(--muted)" stroke-width="1.3" stroke-dasharray="4 5" marker-end="url(#garden-arrow)"/>
             <text x="281" y="83" class="art-label">EVAPORATION</text>
-            <circle cx="375" cy="126" r="19" fill="#e9bf76"/>
-            <g stroke="#bc974f" stroke-width="1.2"><path d="M375 98V93M375 154V159M347 126H342M403 126H408M355 106 351 102M395 146 399 150M355 146 351 150M395 106 399 102"/></g>
-            <path d="M318 402q0-34 22-42-1 24-22 29m0 13q0-27-20-30 0 20 20 24" fill="#92a87d"/>
+            <circle cx="375" cy="126" r="19" fill="var(--cyan)"/>
+            <g stroke="var(--cyan)" stroke-width="1.2"><path d="M375 98V93M375 154V159M347 126H342M403 126H408M355 106 351 102M395 146 399 150M355 146 351 150M395 106 399 102"/></g>
+            <path d="M318 402q0-34 22-42-1 24-22 29m0 13q0-27-20-30 0 20 20 24" fill="var(--teal)"/>
             <text x="244" y="433" text-anchor="middle" class="art-caption">A garden is a system. So are you.</text>
           </svg>
         </figure>
@@ -137,7 +137,7 @@
       <div class="lesson-heading"><span class="chapter-number">03</span><div><p class="eyebrow">THE SPACE BETWEEN</p><h2 id="delays-title">Delays</h2></div></div>
       <p class="lesson-lead">The world takes time to answer.</p>
       <div class="lesson-copy"><p>A decision and its consequences rarely arrive together. Trees take years to mature; hiring takes weeks; information takes time to travel. If we react to yesterday’s conditions, we may keep pushing after enough has already been done.</p><p>That can create <strong>overshoot and oscillation</strong>: too much correction, followed by too much correction in the other direction. Watch what happens when a controller adjusts a stock using an increasingly old reading.</p></div>
-      <div class="experiment delay-experiment"><div class="experiment-top"><span class="eyebrow">CHANGE THE WAIT</span><span class="experiment-tag">A delayed balancing loop</span></div><div class="delay-layout"><div><label for="delay">Feedback delay <output id="delay-output" for="delay">0 steps</output></label><input id="delay" type="range" min="0" max="10" value="0"><div class="model-result" id="delay-status" role="status">Current information helps the stock approach its target smoothly.</div><p class="model-note">Each step corrects 12% of the perceived gap to a target of 60. The stock starts at 20 and is bounded between 0 and 100. Only the age of the reading changes.</p></div><div class="chart-wrap"><svg class="chart" id="delay-chart" viewBox="0 0 440 245" role="img" aria-labelledby="delay-chart-title"><title id="delay-chart-title">A balancing loop approaches its target with no feedback delay</title><path class="chart-grid" d="M45 30H420M45 80H420M45 130H420M45 180H420"/><path class="chart-axis" d="M45 25V200H420"/><path class="target-line" d="M45 98H420"/><text x="335" y="88">TARGET: 60</text><path id="delay-path" class="chart-line amber" d="M45 166C90 100 150 98 420 98"/><text x="45" y="228">TIME →</text><text x="7" y="15">STOCK</text></svg><p>Same response strength. Different timing.</p></div></div></div>
+      <div class="experiment delay-experiment"><div class="experiment-top"><span class="eyebrow">CHANGE THE WAIT</span><span class="experiment-tag">A delayed balancing loop</span></div><div class="delay-layout"><div><label for="delay">Feedback delay <output id="delay-output" for="delay">0 steps</output></label><input id="delay" type="range" min="0" max="10" value="0"><div class="model-result" id="delay-status" role="status">Current information helps the stock approach its target smoothly.</div><p class="model-note">Each step corrects 12% of the perceived gap to a target of 60. The stock starts at 20 and is bounded between 0 and 100. Only the age of the reading changes.</p></div><div class="chart-wrap"><svg class="chart" id="delay-chart" viewBox="0 0 440 245" role="img" aria-labelledby="delay-chart-title"><title id="delay-chart-title">A balancing loop approaches its target with no feedback delay</title><path class="chart-grid" d="M45 30H420M45 80H420M45 130H420M45 180H420"/><path class="chart-axis" d="M45 25V200H420"/><path class="target-line" d="M45 98H420"/><text x="335" y="88">TARGET: 60</text><path id="delay-path" class="chart-line delayed" d="M45 166C90 100 150 98 420 98"/><text x="45" y="228">TIME →</text><text x="7" y="15">STOCK</text></svg><p>Same response strength. Different timing.</p></div></div></div>
       <div class="takeaway"><span aria-hidden="true">↳</span><p><strong>A practical move:</strong> Match the pace of your decisions to the system’s response time. Track actions already in progress, and allow their effects to become visible.</p></div>
       <div class="lesson-end"><button class="complete-button" data-complete="delays" aria-pressed="false">Mark as explored <span aria-hidden="true">✓</span></button><a href="#leverage">Next: Leverage points <span aria-hidden="true">→</span></a></div>
     </section>
