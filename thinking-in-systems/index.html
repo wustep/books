@@ -1,208 +1,792 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="oklch(20% 0.025 240)">
-  <meta name="description" content="See the connections. An illustrated, interactive field guide to stocks, feedback, delays, leverage points, and the ideas of Donella Meadows' Thinking in Systems.">
-  <meta property="og:title" content="Thinking in Systems — An interactive field guide">
-  <meta property="og:description" content="Six ideas to help you see the world a little differently. Explore the work of Donella Meadows through hands-on experiments.">
-  <meta property="og:type" content="website">
-  <title>Thinking in Systems — An interactive field guide</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script src="models.js" defer></script>
-  <script src="app.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f3f0e7">
+<meta name="description" content="An independent field guide to Donella Meadows’ Thinking in Systems. Test stocks, feedback, and delays. Explore resilience, leverage, and system traps. Map a problem of your own.">
+<meta property="og:title" content="Thinking in Systems — Field notes for seeing structure">
+<meta property="og:description" content="Seven field notes, three experiments, and a worksheet for a problem of your own.">
+<meta property="og:type" content="website">
+<title>Thinking in Systems — A field guide</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/newsreader.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="models.js" defer>
+</script>
+<script src="motion.js" defer>
+</script>
+<script src="app.js" defer>
+</script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="mobile-header">
-    <a href="#overview" class="mobile-brand"><img src="assets/favicon.svg" width="31" height="31" alt="">Thinking in Systems</a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="sidebar">Explore <span aria-hidden="true">☰</span></button>
-  </header>
-  <aside class="sidebar" id="sidebar">
-    <a class="brand" href="#overview" aria-label="Thinking in Systems, home">
-      <img src="assets/favicon.svg" alt="" width="46" height="46">
-      <span>Thinking<br>in Systems<span class="brand-subtitle">A FIELD GUIDE</span></span>
-    </a>
-    <div class="sidebar-nav-wrap">
-      <p class="eyebrow nav-label">A NEW WAY OF SEEING</p>
-      <nav aria-label="Field guide">
-        <a class="nav-link active" href="#overview" aria-current="location"><span class="nav-number overview-icon" aria-hidden="true">⌘</span> Overview <span class="nav-dot"></span></a>
-        <a class="nav-link" href="#stocks"><span class="nav-number">01</span> Stocks &amp; flows <span class="nav-dot"></span></a>
-        <a class="nav-link" href="#feedback"><span class="nav-number">02</span> Feedback loops <span class="nav-dot"></span></a>
-        <a class="nav-link" href="#delays"><span class="nav-number">03</span> Delays <span class="nav-dot"></span></a>
-        <a class="nav-link" href="#leverage"><span class="nav-number">04</span> Leverage points <span class="nav-dot"></span></a>
-        <a class="nav-link" href="#traps"><span class="nav-number">05</span> System traps <span class="nav-dot"></span></a>
-        <a class="nav-link" href="#dancing"><span class="nav-number">06</span> Dancing with systems <span class="nav-dot"></span></a>
-      </nav>
-    </div>
-    <div class="sidebar-bottom">
-      <div class="progress-label"><span>YOUR EXPLORATION</span><span id="progress-count">0 / 6</span></div>
-      <div class="progress-track" role="progressbar" aria-label="Completed concepts" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><span id="progress-fill"></span></div>
-      <p>Small ideas. A bigger picture.</p>
-      <a class="about-link" href="#about">About this field guide <span aria-hidden="true">↗</span></a>
-    </div>
-  </aside>
-  <main id="main">
-    <section class="overview page-section" id="overview" aria-labelledby="hero-title">
-      <div class="topline"><span class="eyebrow"><span class="tiny-star" aria-hidden="true">✳</span> AN INTERACTIVE FIELD GUIDE</span><a href="#about">Inspired by Donella Meadows <span aria-hidden="true">↗</span></a></div>
-      <div class="hero">
-        <div class="hero-copy">
-          <div class="pill"><span></span> EVERYTHING IS CONNECTED</div>
-          <h1 id="hero-title">Nothing exists<br>in <em>isolation.</em></h1>
-          <p>From a forest to a friendship, the world is made of systems. Learn to see the patterns beneath the surface—and find better ways to make a difference.</p>
-          <a class="button primary" href="#stocks">Start exploring <span aria-hidden="true">↗</span></a>
-          <div class="hero-meta"><span class="small-orbit" aria-hidden="true">◎</span> 6 core ideas <span class="meta-dot">·</span> Learn at your own pace</div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="masthead">
+<a href="#overview" class="wordmark">
+<img src="assets/favicon.svg" alt="" width="24" height="24"> Thinking in Systems</a>
+<span class="masthead-note">AN INDEPENDENT FIELD GUIDE</span>
+<a class="about-link" href="#about">The book &amp; sources ↗</a>
+</header>
+<div class="page-layout">
+<aside class="guide-rail">
+<p class="eyebrow rail-label">CONTENTS</p>
+<nav aria-label="Field guide">
+<a class="nav-link" href="#stocks">
+<span>01</span>Stocks &amp; flows</a>
+<a class="nav-link" href="#feedback">
+<span>02</span>Feedback</a>
+<a class="nav-link" href="#delays">
+<span>03</span>Delays</a>
+<a class="nav-link" href="#resilience">
+<span>04</span>Resilience</a>
+<a class="nav-link" href="#leverage">
+<span>05</span>Leverage</a>
+<a class="nav-link" href="#traps">
+<span>06</span>System traps</a>
+<a class="nav-link" href="#practice">
+<span>07</span>Use the guide</a>
+</nav>
+<a class="rail-bottom" href="#practice">Make a field note <span aria-hidden="true">↗</span>
+</a>
+</aside>
+<main id="main">
+<section class="overview page-section" id="overview" aria-labelledby="hero-title">
+<div class="hero">
+<div class="hero-copy">
+<p class="eyebrow">A COMPANION TO DONELLA MEADOWS’ BOOK</p>
+<h1 id="hero-title">Thinking<br>in <em>Systems</em>
+</h1>
+<p class="hero-deck">The problem keeps returning.<br>Look at what produces it.</p>
+<p class="hero-intro">A queue that grows. A fix that backfires. A response that arrives too late. Use the ideas in this book to understand a recurring problem before trying to change it.</p>
+<a class="button primary" href="#stocks">Start with stocks &amp; flows <span aria-hidden="true">↓</span>
+</a>
+<a class="text-link" href="#practice">Go straight to your field notes →</a>
+</div>
+<figure class="hero-art" id="opening-diagram">
+<svg viewBox="0 0 520 450" role="img" aria-labelledby="opening-title opening-desc">
+<title id="opening-title">A backlog is a system, not just a pile of work</title>
+<desc id="opening-desc">New requests add to unfinished work. Completions remove work. A larger backlog can create pressure to rush, which causes rework and adds more requests. This reinforcing loop can make a backlog grow.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M0 0 10 5 0 10" fill="var(--ink)"/>
+</marker>
+<marker id="red-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M0 0 10 5 0 10" fill="var(--accent)"/>
+</marker>
+</defs>
+<g class="diagram-base">
+<text x="24" y="32" class="svg-label">FIG. 01 / THE BACKLOG</text>
+<path d="M24 162H165M355 162H496" class="diagram-line" marker-end="url(#arrow)"/>
+<rect x="165" y="112" width="190" height="100" class="diagram-stock"/>
+<text x="260" y="154" text-anchor="middle" class="svg-title">Unfinished</text>
+<text x="260" y="183" text-anchor="middle" class="svg-title">work</text>
+<text x="82" y="138" text-anchor="middle" class="svg-small">New requests</text>
+<text x="427" y="138" text-anchor="middle" class="svg-small">Completions</text>
+</g>
+<g class="diagram-loop">
+<path d="M260 212V255H420V280M420 329V364H110V329M110 280V162" class="diagram-line feedback-line" marker-end="url(#red-arrow)"/>
+<rect x="363" y="282" width="114" height="46" class="diagram-label-bg"/>
+<text x="420" y="300" text-anchor="middle" class="svg-small">Pressure</text>
+<text x="420" y="321" text-anchor="middle" class="svg-small">to rush</text>
+<rect x="60" y="282" width="100" height="46" class="diagram-label-bg"/>
+<text x="110" y="310" text-anchor="middle" class="svg-small">Rework</text>
+<circle cx="264" cy="364" r="22" class="loop-badge"/>
+<text x="264" y="372" text-anchor="middle" class="svg-title">R</text>
+<text x="264" y="418" text-anchor="middle" class="svg-label">MORE BACKLOG → MORE BACKLOG</text>
+</g>
+</svg>
+<figcaption>
+<span class="figure-number" aria-hidden="true">↳</span>
+<p>Rushing can create rework.<br>The backlog can grow even as people work harder.</p>
+</figcaption>
+<button class="diagram-replay" id="diagram-replay" type="button">Trace the loop <span aria-hidden="true">↻</span>
+</button>
+</figure>
+</div>
+<div class="system-definition">
+<span class="eyebrow">WHAT MAKES A SYSTEM?</span>
+<p>
+<strong>Parts, connections, and a function or purpose.</strong> A queue is more than a pile of requests. Arrival rates, working rules, and the reason for doing the work shape how the pile changes. Watch behavior over time to see how the parts work together.</p>
+</div>
+<div class="guide-index">
+<div>
+<p class="eyebrow">THE READING ROUTE</p>
+<h2>See the structure.<br>Then choose a change.</h2>
+<p>Seven field notes. Three live models.<br>A capacity sketch. Your own field notes.</p>
+</div>
+<div class="index-list">
+<a href="#stocks">
+<span class="index-number">01</span>
+<strong>Stocks &amp; flows</strong>
+<span>Name what accumulates.</span>
+<span aria-hidden="true">↗</span>
+</a>
+<a href="#feedback">
+<span class="index-number">02</span>
+<strong>Feedback</strong>
+<span>Trace what comes back.</span>
+<span aria-hidden="true">↗</span>
+</a>
+<a href="#delays">
+<span class="index-number">03</span>
+<strong>Delays</strong>
+<span>Allow time for a response.</span>
+<span aria-hidden="true">↗</span>
+</a>
+<a href="#resilience">
+<span class="index-number">04</span>
+<strong>Resilience</strong>
+<span>Protect the ability to recover.</span>
+<span aria-hidden="true">↗</span>
+</a>
+<a href="#leverage">
+<span class="index-number">05</span>
+<strong>Leverage</strong>
+<span>Change what shapes behavior.</span>
+<span aria-hidden="true">↗</span>
+</a>
+<a href="#traps">
+<span class="index-number">06</span>
+<strong>System traps</strong>
+<span>Recognize the recurring pattern.</span>
+<span aria-hidden="true">↗</span>
+</a>
+<a href="#practice">
+<span class="index-number">07</span>
+<strong>Use the guide</strong>
+<span>Map a problem of your own.</span>
+<span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</section>
+<section class="lesson page-section" id="stocks" aria-labelledby="stocks-title">
+<div class="lesson-heading">
+<span class="chapter-number">01</span>
+<p class="eyebrow">FIELD NOTE / STOCKS & FLOWS</p>
+</div>
+<h2 id="stocks-title">First, name what builds up.</h2>
+<div class="lesson-copy">
+<p>A <strong>stock</strong> is an accumulation at a moment in time. A <strong>flow</strong> changes it over time. Water in a tank is measured in liters. Water entering or leaving is measured in liters per minute.</p>
+<p>A backlog is also a stock. Requests arrive; completed work leaves. Cutting arrivals helps, but the backlog still grows if requests arrive faster than you finish them. A steady stock can have large, equal flows moving through it.</p>
+</div>      <div class="stock-equation">
+<span>Stock now</span>
+<span aria-hidden="true">+</span>
+<span>Inflow over time</span>
+<span aria-hidden="true">−</span>
+<span>Outflow over time</span>
+<span aria-hidden="true">=</span>
+<strong>Stock later</strong>
+</div>
+<div class="experiment reservoir-experiment">
+<span class="experiment-number" aria-hidden="true">02</span>
+        <div class="experiment-top">
+<span class="eyebrow">MODEL 01 / STOCKS &amp; FLOWS</span>
+<span class="experiment-tag">The reservoir</span>
+</div>
+        <div class="reservoir-layout">
+<div class="reservoir-visual">
+          <div class="pipe-label inflow-label">INFLOW <strong>
+<span id="inflow-display">6</span> L/min</strong>
+<span aria-hidden="true">↓</span>
+</div>
+          <div class="tank">
+<div class="tank-water" id="tank-water">
+</div>
+<div class="tank-value">
+<strong id="stock-value">50</strong>
+<span>liters stored</span>
+</div>
+<span class="tank-capacity">100 L CAPACITY</span>
+</div>
+          <div class="pipe-label outflow-label">
+<span aria-hidden="true">→</span>
+<div>OUTFLOW<strong>
+<span id="outflow-display">4</span> L/min</strong>
+</div>
+</div>
         </div>
-        <figure class="hero-art">
-          <svg viewBox="0 0 490 460" role="img" aria-labelledby="garden-title garden-description">
-            <title id="garden-title">A garden is more than its parts</title>
-            <desc id="garden-description">Rain adds soil moisture. Moisture supports plants, which add organic matter that helps soil retain water. This is a reinforcing feedback loop. Evaporation takes water away.</desc>
-            <defs>
-              <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="var(--line)"/></pattern>
-              <marker id="garden-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1 8 5 1 9" fill="none" stroke="var(--teal)" stroke-width="1.5"/></marker>
-            </defs>
-            <circle cx="250" cy="224" r="188" fill="var(--surface-raised)"/>
-            <circle cx="250" cy="224" r="188" fill="url(#dots)" opacity=".65"/>
-            <circle cx="250" cy="224" r="147" fill="none" stroke="var(--line)"/>
-            <circle cx="250" cy="224" r="106" fill="none" stroke="var(--line)"/>
-            <path d="M178 175C245 130 331 167 344 224M334 289C310 348 221 362 167 322M124 268C100 232 107 207 127 187" fill="none" stroke="var(--teal)" stroke-width="1.7" marker-end="url(#garden-arrow)"/>
-            <path d="M134 103 142 139M158 87 169 129M183 103 190 126" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round"/>
-            <g fill="var(--panel)" stroke="var(--control-line)" stroke-width="1.4"><path d="M105 87C95 67 112 51 129 57 129 34 167 33 174 55 196 52 207 82 188 89Z"/></g>
-            <text x="91" y="27" class="art-label">RAINFALL</text>
-            <g transform="translate(65 145)"><rect width="163" height="72" rx="9" fill="var(--surface-selected)" stroke="var(--control-line)"/><path d="M25 21C21 27 15 35 15 41A10 10 0 0 0 35 41C35 35 29 27 25 21Z" fill="none" stroke="var(--cyan)" stroke-width="1.5"/><text x="47" y="33" class="art-node">Soil moisture</text><text x="47" y="52" class="art-small">a stock of water</text></g>
-            <g transform="translate(280 237)"><rect width="164" height="73" rx="9" fill="var(--surface-raised)" stroke="var(--control-line)"/><path d="M28 53V24M28 37C19 39 14 33 14 28C23 26 28 30 28 37ZM28 30C27 22 32 18 39 17C42 26 36 31 28 30Z" fill="none" stroke="var(--teal)" stroke-width="1.5"/><text x="50" y="33" class="art-node">Plant growth</text><text x="50" y="52" class="art-small">life taking root</text></g>
-            <g transform="translate(69 294)"><rect width="175" height="72" rx="9" fill="var(--surface-selected)" stroke="var(--control-line)"/><path d="M20 47C15 28 30 19 35 20 38 41 20 47 20 47ZM20 47 31 29" fill="none" stroke="var(--teal)" stroke-width="1.5"/><text x="46" y="32" class="art-node">Organic matter</text><text x="46" y="51" class="art-small">richer, living soil</text></g>
-            <circle cx="242" cy="251" r="18" fill="var(--panel)" stroke="var(--control-line)"/><text x="242" y="257" text-anchor="middle" fill="var(--teal)" font-size="17" font-family="Georgia,serif">R</text>
-            <text x="278" y="167" class="art-small" transform="rotate(24 278 167)">supports</text>
-            <text x="278" y="355" class="art-small" transform="rotate(-18 278 355)">enriches</text>
-            <text x="33" y="258" class="art-small">retains water</text>
-            <path d="M219 142C265 111 305 106 333 92" fill="none" stroke="var(--muted)" stroke-width="1.3" stroke-dasharray="4 5" marker-end="url(#garden-arrow)"/>
-            <text x="281" y="83" class="art-label">EVAPORATION</text>
-            <circle cx="375" cy="126" r="19" fill="var(--cyan)"/>
-            <g stroke="var(--cyan)" stroke-width="1.2"><path d="M375 98V93M375 154V159M347 126H342M403 126H408M355 106 351 102M395 146 399 150M355 146 351 150M395 106 399 102"/></g>
-            <path d="M318 402q0-34 22-42-1 24-22 29m0 13q0-27-20-30 0 20 20 24" fill="var(--teal)"/>
-            <text x="244" y="433" text-anchor="middle" class="art-caption">A garden is a system. So are you.</text>
-          </svg>
-        </figure>
-      </div>
-      <div class="intro-strip"><span class="strip-symbol" aria-hidden="true">↔</span><p><strong>A different lens, not another checklist.</strong> Systems thinking asks how things connect, how they change, and why the same patterns keep showing up.</p></div>
-      <div class="section-heading"><div><p class="eyebrow">THE BIG PICTURE</p><h2>Six ideas. Endless connections.</h2></div><span class="section-aside">Follow the path, or follow your curiosity.</span></div>
-      <div class="concept-grid">
-        <a class="concept-card" href="#stocks"><div class="card-top"><span class="concept-icon water-icon" aria-hidden="true">≋</span><span class="card-number">01</span></div><h3>Stocks &amp; flows</h3><p>What builds up. What moves.<br>The memory of a system.</p><span class="card-footer">THE BUILDING BLOCKS <span aria-hidden="true">↗</span></span></a>
-        <a class="concept-card" href="#feedback"><div class="card-top"><span class="concept-icon loop-icon" aria-hidden="true">⟳</span><span class="card-number">02</span></div><h3>Feedback loops</h3><p>When effects become causes,<br>patterns start to emerge.</p><span class="card-footer">THE ENGINES OF CHANGE <span aria-hidden="true">↗</span></span></a>
-        <a class="concept-card" href="#delays"><div class="card-top"><span class="concept-icon delay-icon" aria-hidden="true">◷</span><span class="card-number">03</span></div><h3>Delays</h3><p>Why the response doesn’t always<br>arrive when you expect it.</p><span class="card-footer">THE SPACE BETWEEN <span aria-hidden="true">↗</span></span></a>
-        <a class="concept-card" href="#leverage"><div class="card-top"><span class="concept-icon leverage-icon" aria-hidden="true">↗</span><span class="card-number">04</span></div><h3>Leverage points</h3><p>Find the places where a change<br>can change everything.</p><span class="card-footer">WHERE TO INTERVENE <span aria-hidden="true">↗</span></span></a>
-        <a class="concept-card" href="#traps"><div class="card-top"><span class="concept-icon traps-icon" aria-hidden="true">⌘</span><span class="card-number">05</span></div><h3>System traps</h3><p>Familiar problems. Hidden<br>structures. Possible ways out.</p><span class="card-footer">PATTERNS TO RECOGNIZE <span aria-hidden="true">↗</span></span></a>
-        <a class="concept-card" href="#dancing"><div class="card-top"><span class="concept-icon dance-icon" aria-hidden="true">✳</span><span class="card-number">06</span></div><h3>Dancing with systems</h3><p>Less certainty. More curiosity.<br>A wiser way to participate.</p><span class="card-footer">FROM KNOWING TO LIVING <span aria-hidden="true">↗</span></span></a>
-      </div>
-      <div class="overview-note"><span aria-hidden="true">✳</span><p>You’re part of the systems you’re trying to understand.<br><strong>That’s a good place to begin.</strong></p></div>
-    </section>
-
-    <section class="lesson page-section" id="stocks" aria-labelledby="stocks-title">
-      <div class="lesson-heading"><span class="chapter-number">01</span><div><p class="eyebrow">THE BUILDING BLOCKS</p><h2 id="stocks-title">Stocks &amp; flows</h2></div></div>
-      <p class="lesson-lead">A stock is what has accumulated. A flow is how it changes.</p>
-      <div class="lesson-copy"><p>Water in a reservoir is a <strong>stock</strong>, measured in liters. Water arriving or leaving is a <strong>flow</strong>, measured in liters per minute. A stock carries the history of those flows: turning off the tap doesn’t instantly empty the reservoir.</p><p>The same lens works for unread messages, skills, or trust. Ask what is building up, then look for what adds to it and what drains it. A stock stays steady when total inflow equals total outflow—even while plenty is moving.</p></div>
-      <div class="experiment reservoir-experiment">
-        <div class="experiment-top"><span class="eyebrow"><span class="live-dot"></span> TRY THE MODEL</span><span class="experiment-tag">The reservoir</span></div>
-        <div class="reservoir-layout"><div class="reservoir-visual">
-          <div class="pipe-label inflow-label">INFLOW <strong><span id="inflow-display">6</span> L/min</strong><span aria-hidden="true">↓</span></div>
-          <div class="tank"><div class="tank-water" id="tank-water"></div><div class="tank-value"><strong id="stock-value">50</strong><span>liters stored</span></div><span class="tank-capacity">100 L CAPACITY</span></div>
-          <div class="pipe-label outflow-label"><span aria-hidden="true">→</span><div>OUTFLOW<strong><span id="outflow-display">4</span> L/min</strong></div></div>
-        </div><div class="experiment-controls">
-          <label for="inflow">Water coming in <output id="inflow-output" for="inflow">6 L/min</output></label><input id="inflow" type="range" min="0" max="12" value="6">
-          <label for="outflow">Requested outflow <output id="outflow-output" for="outflow">4 L/min</output></label><input id="outflow" type="range" min="0" max="12" value="4">
+<div class="experiment-controls">
+          <label for="inflow">Water coming in <output id="inflow-output" for="inflow">6 L/min</output>
+</label>
+<input id="inflow" type="range" min="0" max="12" value="6" disabled>
+          <label for="outflow">Requested outflow <output id="outflow-output" for="outflow">4 L/min</output>
+</label>
+<input id="outflow" type="range" min="0" max="12" value="4" disabled>
           <div class="model-result" id="reservoir-status" role="status">The reservoir is filling at 2 L/min.</div>
-          <div class="button-row"><button class="button primary small" id="reservoir-toggle">Run model <span aria-hidden="true">▶</span></button><button class="button quiet small" id="reservoir-step">+1 minute</button><button class="icon-button" id="reservoir-reset" aria-label="Reset reservoir">↺</button></div>
-          <p class="model-note">Elapsed: <span id="reservoir-time">0</span> min. In this simplified model, 1 second represents 1 minute. Excess water spills over; an empty tank cannot supply more than it receives.</p>
-        </div></div>
+          <div class="button-row">
+<button class="button primary small" id="reservoir-toggle" disabled>Run model <span aria-hidden="true">▶</span>
+</button>
+<button class="button quiet small" id="reservoir-step" disabled>+1 minute</button>
+<button class="icon-button" id="reservoir-reset" aria-label="Reset reservoir" disabled>↺</button>
+</div>
+          <p class="model-note">Elapsed: <span id="reservoir-time">0</span> min. One click advances one minute. Running advances one minute per second.</p>
+<details class="model-assumptions">
+<summary>Model assumptions <span aria-hidden="true">+</span>
+</summary>
+<p>Starts at 50 L, with a 100 L capacity. Rates stay fixed until you change them. Water arrives before the requested outflow is taken. Excess spills over; drainage cannot exceed the water available.</p>
+</details>
+        </div>
+</div>
       </div>
-      <div class="takeaway"><span aria-hidden="true">↳</span><p><strong>Try this:</strong> Lower the inflow while keeping it above the outflow. The level still rises—just more slowly. Slower growth is different from decline.</p></div>
-      <div class="lesson-end"><button class="complete-button" data-complete="stocks" aria-pressed="false">Mark as explored <span aria-hidden="true">✓</span></button><a href="#feedback">Next: Feedback loops <span aria-hidden="true">→</span></a></div>
-    </section>
-
-    <section class="lesson page-section" id="feedback" aria-labelledby="feedback-title">
-      <div class="lesson-heading"><span class="chapter-number">02</span><div><p class="eyebrow">THE ENGINES OF CHANGE</p><h2 id="feedback-title">Feedback loops</h2></div></div>
-      <p class="lesson-lead">Sometimes the result circles back to shape what happens next.</p>
-      <div class="lesson-copy"><p>A <strong>reinforcing loop</strong> amplifies a change. More practice builds skill; greater skill can make practice more rewarding. These loops can also accelerate decline: less trust, less cooperation, even less trust.</p><p>A <strong>balancing loop</strong> responds to a gap. A thermostat compares room temperature with a setting and adjusts heating. It tends toward a target, though delays and weak responses can keep it from settling there.</p></div>
-      <div class="experiment"><div class="experiment-top"><span class="eyebrow">FOLLOW THE LOOP</span><div class="segmented" role="group" aria-label="Feedback type"><button data-feedback="reinforcing" aria-pressed="true">Reinforcing</button><button data-feedback="balancing" aria-pressed="false">Balancing</button></div></div>
-        <div class="feedback-layout"><div class="loop-visual"><div class="loop-ring"><span class="loop-node top" id="loop-top">More skill</span><span class="loop-direction right" aria-hidden="true">↓</span><span class="loop-center" id="loop-letter">R</span><span class="loop-direction left" aria-hidden="true">↑</span><span class="loop-node bottom" id="loop-bottom">More rewarding practice</span></div><p id="loop-caption">Change feeds further change.</p></div><div class="chart-wrap"><svg class="chart" id="feedback-chart" viewBox="0 0 440 245" role="img" aria-labelledby="feedback-chart-title"><title id="feedback-chart-title">Reinforcing growth: a stock increases faster as it grows</title><path class="chart-grid" d="M45 30H420M45 80H420M45 130H420M45 180H420"/><path class="chart-axis" d="M45 25V200H420"/><path id="feedback-target" class="target-line" d="M45 64H420" hidden/><path id="feedback-path" class="chart-line" d="M45 183C180 176 300 143 420 47"/><text x="45" y="228">TIME →</text><text x="7" y="15">STOCK</text><text id="target-label" x="335" y="55" hidden>TARGET</text></svg><p id="feedback-description">Illustrative model: a stock grows by 5.5% of its current size each step, with no resource limit.</p></div></div>
+<div class="field-question">
+<span class="eyebrow">IN THE FIELD</span>
+<p>
+<strong>Try it:</strong> Set inflow to 5 and outflow to 4. Step the model. The stock still grows. To shrink it, outflow must exceed inflow.</p>
+</div>
+<a class="next-link" href="#feedback">Next / Feedback <span aria-hidden="true">→</span>
+</a>
+</section>
+<section class="lesson page-section" id="feedback" aria-labelledby="feedback-title">
+<div class="lesson-heading">
+<span class="chapter-number">02</span>
+<p class="eyebrow">FIELD NOTE / FEEDBACK</p>
+</div>
+<h2 id="feedback-title">Follow the effect back to its cause.</h2>
+<div class="lesson-copy">
+<p>A <strong>reinforcing loop</strong> amplifies change. Rushing can cause mistakes. Mistakes create rework. Rework increases the pressure to rush. The effect returns to strengthen its cause. Reinforcement can accelerate growth or decline.</p>
+<p>A <strong>balancing loop</strong> counters a gap. A team sees a backlog above its target and shifts time toward completing requests. The response reduces the gap. “Balancing” describes what the loop does; it does not mean the target is desirable.</p>
+</div>      <div class="experiment">
+<span class="experiment-number" aria-hidden="true">03</span>
+<div class="experiment-top">
+<span class="eyebrow">MODEL 02 / FEEDBACK</span>
+<div class="segmented" role="group" aria-label="Feedback type">
+<button data-feedback="reinforcing" aria-pressed="true" disabled>Reinforcing</button>
+<button data-feedback="balancing" aria-pressed="false" disabled>Balancing</button>
+</div>
+</div>
+        <div class="feedback-layout">
+<div class="loop-visual">
+<div class="loop-ring">
+<span class="loop-node top" id="loop-top">Stock size</span>
+<span class="loop-direction right" aria-hidden="true">↓</span>
+<span class="loop-center" id="loop-letter">R</span>
+<span class="loop-direction left" aria-hidden="true">↑</span>
+<span class="loop-node bottom" id="loop-bottom">Addition per step</span>
+</div>
+<p id="loop-caption">More stock → larger addition → more stock.</p>
+</div>
+<div class="chart-wrap">
+<svg class="chart" id="feedback-chart" viewBox="0 0 440 245" role="img" aria-labelledby="feedback-chart-title">
+<title id="feedback-chart-title">Reinforcing growth: a stock increases faster as it grows</title>
+<path class="chart-grid" d="M45 30H420M45 80H420M45 130H420M45 180H420"/>
+<path class="chart-axis" d="M45 25V200H420"/>
+<path id="feedback-target" class="target-line" d="M45 64H420" hidden/>
+<path id="feedback-path" class="chart-line" d="M45.00 183.00 L54.38 182.06 L63.75 181.08 L73.13 180.04 L82.50 178.94 L91.88 177.78 L101.25 176.56 L110.63 175.27 L120.00 173.91 L129.38 172.48 L138.75 170.96 L148.13 169.36 L157.50 167.68 L166.88 165.90 L176.25 164.03 L185.63 162.05 L195.00 159.96 L204.38 157.76 L213.75 155.44 L223.13 152.98 L232.50 150.40 L241.88 147.67 L251.25 144.79 L260.63 141.76 L270.00 138.55 L279.38 135.17 L288.75 131.61 L298.13 127.85 L307.50 123.88 L316.88 119.69 L326.25 115.27 L335.63 110.61 L345.00 105.70 L354.38 100.51 L363.75 95.04 L373.13 89.26 L382.50 83.17 L391.88 76.75 L401.25 69.97 L410.63 62.82 L420.00 55.27"/>
+<text x="45" y="228">STEP →</text>
+<text x="45" y="15">STOCK (UNITS)</text>
+<text x="34" y="204" text-anchor="end">0</text>
+<text x="34" y="119" text-anchor="end">50</text>
+<text x="34" y="34" text-anchor="end">100</text>
+<text id="target-label" x="335" y="55" hidden>TARGET: 80</text>
+<text x="420" y="228" text-anchor="end">40</text>
+</svg>
+<p id="feedback-description">Illustrative model: a stock grows by 5.5% of its current size each step, with no resource limit.</p>
+</div>
+</div>
       </div>
-      <div class="takeaway"><span aria-hidden="true">↳</span><p><strong>Reinforcing and balancing describe behavior, not goodness.</strong> Growth can be harmful; stability can preserve an unfair situation. Real systems contain many interacting loops.</p></div>
-      <div class="lesson-end"><button class="complete-button" data-complete="feedback" aria-pressed="false">Mark as explored <span aria-hidden="true">✓</span></button><a href="#delays">Next: Delays <span aria-hidden="true">→</span></a></div>
-    </section>
-
-    <section class="lesson page-section" id="delays" aria-labelledby="delays-title">
-      <div class="lesson-heading"><span class="chapter-number">03</span><div><p class="eyebrow">THE SPACE BETWEEN</p><h2 id="delays-title">Delays</h2></div></div>
-      <p class="lesson-lead">The world takes time to answer.</p>
-      <div class="lesson-copy"><p>A decision and its consequences rarely arrive together. Trees take years to mature; hiring takes weeks; information takes time to travel. If we react to yesterday’s conditions, we may keep pushing after enough has already been done.</p><p>That can create <strong>overshoot and oscillation</strong>: too much correction, followed by too much correction in the other direction. Watch what happens when a controller adjusts a stock using an increasingly old reading.</p></div>
-      <div class="experiment delay-experiment"><div class="experiment-top"><span class="eyebrow">CHANGE THE WAIT</span><span class="experiment-tag">A delayed balancing loop</span></div><div class="delay-layout"><div><label for="delay">Feedback delay <output id="delay-output" for="delay">0 steps</output></label><input id="delay" type="range" min="0" max="10" value="0"><div class="model-result" id="delay-status" role="status">Current information helps the stock approach its target smoothly.</div><p class="model-note">Each step corrects 12% of the perceived gap to a target of 60. The stock starts at 20 and is bounded between 0 and 100. Only the age of the reading changes.</p></div><div class="chart-wrap"><svg class="chart" id="delay-chart" viewBox="0 0 440 245" role="img" aria-labelledby="delay-chart-title"><title id="delay-chart-title">A balancing loop approaches its target with no feedback delay</title><path class="chart-grid" d="M45 30H420M45 80H420M45 130H420M45 180H420"/><path class="chart-axis" d="M45 25V200H420"/><path class="target-line" d="M45 98H420"/><text x="335" y="88">TARGET: 60</text><path id="delay-path" class="chart-line delayed" d="M45 166C90 100 150 98 420 98"/><text x="45" y="228">TIME →</text><text x="7" y="15">STOCK</text></svg><p>Same response strength. Different timing.</p></div></div></div>
-      <div class="takeaway"><span aria-hidden="true">↳</span><p><strong>A practical move:</strong> Match the pace of your decisions to the system’s response time. Track actions already in progress, and allow their effects to become visible.</p></div>
-      <div class="lesson-end"><button class="complete-button" data-complete="delays" aria-pressed="false">Mark as explored <span aria-hidden="true">✓</span></button><a href="#leverage">Next: Leverage points <span aria-hidden="true">→</span></a></div>
-    </section>
-
-    <section class="lesson page-section" id="leverage" aria-labelledby="leverage-title">
-      <div class="lesson-heading"><span class="chapter-number">04</span><div><p class="eyebrow">WHERE TO INTERVENE</p><h2 id="leverage-title">Leverage points</h2></div></div>
-      <p class="lesson-lead">The place you push matters as much as how hard you push.</p>
-      <div class="lesson-copy"><p>Meadows arranged twelve places to intervene, from adjusting numbers to reconsidering the beliefs that organize a system. Deeper interventions can reshape many behaviors at once.</p><p>This is a guide to inquiry, not a guaranteed ranking for every situation. Context, direction, and feasibility matter. Explore the ladder through one example: a community library.</p></div>
-      <div class="ladder-header"><span class="eyebrow">12 PLACES TO INTERVENE</span><span>Increasing potential for change <span aria-hidden="true">↓</span></span></div>
-      <div class="leverage-ladder">
-        <details class="ladder-row"><summary><span class="ladder-number">12</span><span>Numbers &amp; parameters</span><span class="ladder-group">TUNE THE SETTINGS</span><span class="expand-icon">+</span></summary><p>Adjust a quantity. <strong>Library:</strong> extend loan periods from two weeks to three.</p></details>
-        <details class="ladder-row"><summary><span class="ladder-number">11</span><span>Buffers</span><span class="expand-icon">+</span></summary><p>Change reserves relative to demand. <strong>Library:</strong> hold spare copies of popular books.</p></details>
-        <details class="ladder-row"><summary><span class="ladder-number">10</span><span>Physical structure</span><span class="expand-icon">+</span></summary><p>Rearrange stocks and pathways. <strong>Library:</strong> add a neighborhood branch or a bookmobile.</p></details>
-        <details class="ladder-row"><summary><span class="ladder-number">09</span><span>Delays</span><span class="expand-icon">+</span></summary><p>Change response times. <strong>Library:</strong> shorten the wait between a request and a purchase.</p></details>
-        <details class="ladder-row mid"><summary><span class="ladder-number">08</span><span>Balancing feedback</span><span class="ladder-group">RESHAPE THE CONNECTIONS</span><span class="expand-icon">+</span></summary><p>Strengthen correction. <strong>Library:</strong> use growing waitlists to trigger extra purchases.</p></details>
-        <details class="ladder-row mid"><summary><span class="ladder-number">07</span><span>Reinforcing feedback</span><span class="expand-icon">+</span></summary><p>Alter amplification. <strong>Library:</strong> help successful reading groups recruit and support new groups.</p></details>
-        <details class="ladder-row mid"><summary><span class="ladder-number">06</span><span>Information flows</span><span class="expand-icon">+</span></summary><p>Reveal missing information. <strong>Library:</strong> publish unmet requests, including those from underserved neighborhoods.</p></details>
-        <details class="ladder-row mid"><summary><span class="ladder-number">05</span><span>Rules</span><span class="expand-icon">+</span></summary><p>Change permissions and incentives. <strong>Library:</strong> remove overdue fines that prevent people from borrowing.</p></details>
-        <details class="ladder-row deep"><summary><span class="ladder-number">04</span><span>Self-organization</span><span class="ladder-group">REIMAGINE THE SYSTEM</span><span class="expand-icon">+</span></summary><p>Enable new structures. <strong>Library:</strong> let residents create and run their own lending programs.</p></details>
-        <details class="ladder-row deep"><summary><span class="ladder-number">03</span><span>Goals</span><span class="expand-icon">+</span></summary><p>Redefine success. <strong>Library:</strong> prioritize equitable learning over the number of loans.</p></details>
-        <details class="ladder-row deep"><summary><span class="ladder-number">02</span><span>Paradigms</span><span class="expand-icon">+</span></summary><p>Question foundational beliefs. <strong>Library:</strong> see knowledge as a shared resource rather than a scarce privilege.</p></details>
-        <details class="ladder-row deep"><summary><span class="ladder-number">01</span><span>Freedom from paradigms</span><span class="expand-icon">+</span></summary><p>Hold every worldview provisionally. <strong>Library:</strong> stay open to entirely different ways of supporting learning.</p></details>
+<div class="field-question">
+<span class="eyebrow">IN THE FIELD</span>
+<p>
+<strong>Draw a closed loop.</strong> Choose one consequence of your action. Does it return to strengthen the original change or counteract it?</p>
+</div>
+<a class="next-link" href="#delays">Next / Delays <span aria-hidden="true">→</span>
+</a>
+</section>
+<section class="lesson page-section" id="delays" aria-labelledby="delays-title">
+<div class="lesson-heading">
+<span class="chapter-number">03</span>
+<p class="eyebrow">FIELD NOTE / DELAYS</p>
+</div>
+<h2 id="delays-title">The response may still be on its way.</h2>
+<div class="lesson-copy">
+<p>A <strong>delay</strong> is a wait between cause and effect. Actions take time to change a stock. Information about the result can arrive later still. Repeated corrections based on old readings can push a stock past its target, then back the other way.</p>
+<p>Imagine adding staff whenever the backlog looks too high. Hiring and training take time. If you ignore people already being trained, you may keep adding capacity you will not need.</p>
+</div>      <div class="experiment delay-experiment">
+<span class="experiment-number" aria-hidden="true">04</span>
+<div class="experiment-top">
+<span class="eyebrow">MODEL 03 / DELAYS</span>
+<span class="experiment-tag">A delayed balancing loop</span>
+</div>
+<div class="delay-layout">
+<div>
+<label for="delay">Feedback delay <output id="delay-output" for="delay">0 steps</output>
+</label>
+<input id="delay" type="range" min="0" max="10" value="0" disabled>
+<div class="model-result" id="delay-status" role="status">Current information helps this controller approach its target smoothly.</div>
+<p class="model-note">The controller adjusts using an older reading of the stock.</p>
+<details class="model-assumptions">
+<summary>Model assumptions <span aria-hidden="true">+</span>
+</summary>
+<p>Each step adds 12% of the gap between the target of 60 and the reading available to the controller. The stock starts at 20 and is bounded between 0 and 100. Delays are whole steps; only the age of the reading changes.</p>
+</details>
+</div>
+<div class="chart-wrap">
+<svg class="chart" id="delay-chart" viewBox="0 0 440 245" role="img" aria-labelledby="delay-chart-title">
+<title id="delay-chart-title">A balancing loop approaches its target with no feedback delay</title>
+<path class="chart-grid" d="M45 30H420M45 80H420M45 130H420M45 180H420"/>
+<path class="chart-axis" d="M45 25V200H420"/>
+<path class="target-line" d="M45 98H420"/>
+<text x="335" y="88">TARGET: 60</text>
+<text x="420" y="228" text-anchor="end">60</text>
+<path id="delay-path" class="chart-line delayed" d="M45.00 166.00 L51.25 157.84 L57.50 150.66 L63.75 144.34 L70.00 138.78 L76.25 133.89 L82.50 129.58 L88.75 125.79 L95.00 122.46 L101.25 119.52 L107.50 116.94 L113.75 114.67 L120.00 112.67 L126.25 110.91 L132.50 109.36 L138.75 107.99 L145.00 106.79 L151.25 105.74 L157.50 104.81 L163.75 103.99 L170.00 103.27 L176.25 102.64 L182.50 102.08 L188.75 101.59 L195.00 101.16 L201.25 100.78 L207.50 100.45 L213.75 100.16 L220.00 99.90 L226.25 99.67 L232.50 99.47 L238.75 99.29 L245.00 99.14 L251.25 99.00 L257.50 98.88 L263.75 98.78 L270.00 98.68 L276.25 98.60 L282.50 98.53 L288.75 98.46 L295.00 98.41 L301.25 98.36 L307.50 98.32 L313.75 98.28 L320.00 98.25 L326.25 98.22 L332.50 98.19 L338.75 98.17 L345.00 98.15 L351.25 98.13 L357.50 98.11 L363.75 98.10 L370.00 98.09 L376.25 98.08 L382.50 98.07 L388.75 98.06 L395.00 98.05 L401.25 98.05 L407.50 98.04 L413.75 98.04 L420.00 98.03"/>
+<text x="45" y="228">STEP →</text>
+<text x="45" y="15">STOCK (UNITS)</text>
+<text x="34" y="204" text-anchor="end">0</text>
+<text x="34" y="119" text-anchor="end">50</text>
+<text x="34" y="34" text-anchor="end">100</text>
+</svg>
+<p>Increase the delay from 0 to 10. Watch the stock cross its target and change direction. This is a teaching model, not a prediction.</p>
+</div>
+</div>
+</div>
+<div class="field-question">
+<span class="eyebrow">IN THE FIELD</span>
+<p>
+<strong>Before adjusting again:</strong> How long should the last change take to work? What is already in progress but missing from today’s measurement?</p>
+</div>
+<a class="next-link" href="#resilience">Next / Resilience <span aria-hidden="true">→</span>
+</a>
+</section>
+<section class="lesson page-section" id="resilience" aria-labelledby="resilience-title">
+<div class="lesson-heading">
+<span class="chapter-number">04</span>
+<p class="eyebrow">FIELD NOTE / RESILIENCE</p>
+</div>
+<h2 id="resilience-title">Keep the ability to recover.</h2>
+<div class="lesson-copy">
+<p>
+<strong>Resilience</strong> is the capacity to absorb a disturbance and keep functioning. A quiet system is not necessarily resilient. It may simply have avoided a serious test. Recovery depends on the responses available when conditions change.</p>
+<p>A team scheduled to 100% capacity can be efficient on an ordinary day and brittle when someone is absent. Slack, several ways to do the work, and people who can adapt give it room to respond.</p>
+</div>
+<div class="resilience-study">
+<span class="experiment-number" aria-hidden="true">05</span>
+<div class="experiment-top">
+<p class="eyebrow">A CAPACITY SKETCH / 8-HOUR DAY</p>
+<div class="segmented js-control" role="group" aria-label="Work arriving">
+<button data-stress="0" aria-pressed="true">Planned work</button>
+<button data-stress="2" aria-pressed="false">+2 hours of work</button>
+</div>
+</div>
+<div class="capacity-row">
+<strong>Every hour booked</strong>
+<div class="capacity-track">
+<span class="committed" style="width:80%">8 h planned</span>
+<span class="surprise" id="full-surprise" style="width:0%">
+</span>
+<span class="capacity-limit" aria-hidden="true">
+</span>
+</div>
+</div>
+<div class="capacity-row">
+<strong>Room to respond</strong>
+<div class="capacity-track">
+<span class="committed" style="width:60%">6 h planned</span>
+<span class="reserve" id="spare-reserve" style="width:20%">2 h spare</span>
+<span class="surprise" id="spare-surprise" style="width:0%">
+</span>
+<span class="capacity-limit" aria-hidden="true">
+</span>
+</div>
+</div>
+<p class="capacity-key">
+<span aria-hidden="true">│</span> The vertical mark is the same 8-hour capacity for both teams.</p>
+<p id="resilience-status" role="status">Both teams can finish their planned work. The second has 2 hours left for the unexpected. It commits to less in advance.</p>
+<p class="model-note">A sketch of a tradeoff, not a staffing forecast. Spare time is one buffer. Shared skills and alternate routes matter too.</p>
+</div>
+<details class="field-detail">
+<summary>Three things to distinguish <span aria-hidden="true">+</span>
+</summary>
+<div>
+<p>
+<strong>Resilience:</strong> recover after a disturbance.</p>
+<p>
+<strong>Self-organization:</strong> create or revise structures.</p>
+<p>
+<strong>Hierarchy:</strong> organize smaller systems within larger ones. Coordination helps when the larger level supports the work below it.</p>
+</div>
+</details>
+<div class="field-question">
+<span class="eyebrow">IN THE FIELD</span>
+<p>
+<strong>Test a disturbance.</strong> If the busiest person were absent for a week, what would stop? Which reserve, alternative route, or shared skill would help?</p>
+</div>
+<a class="next-link" href="#leverage">Next / Leverage <span aria-hidden="true">→</span>
+</a>
+</section>
+<section class="lesson page-section" id="leverage" aria-labelledby="leverage-title">
+<div class="lesson-heading">
+<span class="chapter-number">05</span>
+<p class="eyebrow">FIELD NOTE / LEVERAGE</p>
+</div>
+<h2 id="leverage-title">Change what shapes the behavior.</h2>
+<div class="lesson-copy">
+<p>You can adjust a number without changing the pattern. Longer library loan periods are one intervention. Changing who can borrow, who sees unmet demand, or what the library is trying to achieve reaches further into its structure.</p>
+<p>Meadows orders twelve kinds of intervention from parameters toward underlying beliefs. Use the list to widen your options. A deeper change is not automatically feasible or effective in a particular situation.</p>
+</div>
+<div class="ladder-header">
+<span class="eyebrow">TWELVE PLACES TO LOOK</span>
+<span>From settings to assumptions ↓</span>
+</div>      <div class="leverage-ladder">
+<h3 class="ladder-category">12–09 / Stocks and timing</h3>
+        <details class="ladder-row" name="leverage">
+<summary>
+<span class="ladder-number">12</span>
+<span>Numbers &amp; parameters</span>
+<span class="ladder-group">TUNE THE SETTINGS</span>
+<span class="expand-icon">+</span>
+</summary>
+<p>Adjust a quantity. <strong>Library:</strong> extend loan periods from two weeks to three. <span class="watch-note">Watch: longer loans also delay access for the next reader.</span>
+</p>
+</details>
+        <details class="ladder-row" name="leverage">
+<summary>
+<span class="ladder-number">11</span>
+<span>Buffers</span>
+<span class="expand-icon">+</span>
+</summary>
+<p>Change reserves relative to demand. <strong>Library:</strong> hold spare copies of popular books. <span class="watch-note">Watch: reserves use space and money even when demand is low.</span>
+</p>
+</details>
+        <details class="ladder-row" name="leverage">
+<summary>
+<span class="ladder-number">10</span>
+<span>Physical structure</span>
+<span class="expand-icon">+</span>
+</summary>
+<p>Rearrange stocks and pathways. <strong>Library:</strong> add a neighborhood branch or a bookmobile. <span class="watch-note">Ask: which readers cannot reach the current collection?</span>
+</p>
+</details>
+        <details class="ladder-row" name="leverage">
+<summary>
+<span class="ladder-number">09</span>
+<span>Delays</span>
+<span class="expand-icon">+</span>
+</summary>
+<p>Change response times. <strong>Library:</strong> shorten the wait between a request and a purchase. <span class="watch-note">Watch: a faster response still needs a useful demand signal.</span>
+</p>
+</details>
+        <h3 class="ladder-category">08–05 / Feedback, information, rules</h3>
+<details class="ladder-row mid" name="leverage">
+<summary>
+<span class="ladder-number">08</span>
+<span>Balancing feedback</span>
+<span class="ladder-group">RESHAPE THE CONNECTIONS</span>
+<span class="expand-icon">+</span>
+</summary>
+<p>Strengthen correction. <strong>Library:</strong> use growing waitlists to trigger extra purchases. <span class="watch-note">Ask: does the response keep up with the size of the gap?</span>
+</p>
+</details>
+        <details class="ladder-row mid" name="leverage">
+<summary>
+<span class="ladder-number">07</span>
+<span>Reinforcing feedback</span>
+<span class="expand-icon">+</span>
+</summary>
+<p>Alter amplification. <strong>Library:</strong> help reading groups recruit and support new groups. <span class="watch-note">Watch: attention can concentrate in groups that already have it.</span>
+</p>
+</details>
+        <details class="ladder-row mid" name="leverage">
+<summary>
+<span class="ladder-number">06</span>
+<span>Information flows</span>
+<span class="expand-icon">+</span>
+</summary>
+<p>Reveal missing information. <strong>Library:</strong> make unmet requests visible to purchasing staff. <span class="watch-note">Ask: whose requests never enter the records?</span>
+</p>
+</details>
+        <details class="ladder-row mid" name="leverage">
+<summary>
+<span class="ladder-number">05</span>
+<span>Rules</span>
+<span class="expand-icon">+</span>
+</summary>
+<p>Change permissions and incentives. <strong>Library:</strong> remove overdue fines that prevent people from borrowing. <span class="watch-note">Watch both access and the return of shared books.</span>
+</p>
+</details>
+        <h3 class="ladder-category">04–01 / Organization, goals, beliefs</h3>
+<details class="ladder-row deep" name="leverage">
+<summary>
+<span class="ladder-number">04</span>
+<span>Self-organization</span>
+<span class="ladder-group">REIMAGINE THE SYSTEM</span>
+<span class="expand-icon">+</span>
+</summary>
+<p>Enable new structures. <strong>Library:</strong> let residents create and run their own lending programs. <span class="watch-note">Ask: do they have the resources as well as permission?</span>
+</p>
+</details>
+        <details class="ladder-row deep" name="leverage">
+<summary>
+<span class="ladder-number">03</span>
+<span>Goals</span>
+<span class="expand-icon">+</span>
+</summary>
+<p>Redefine success. <strong>Library:</strong> prioritize access to learning over the number of loans. <span class="watch-note">Ask: what decisions would change under that goal?</span>
+</p>
+</details>
+        <details class="ladder-row deep" name="leverage">
+<summary>
+<span class="ladder-number">02</span>
+<span>Paradigms</span>
+<span class="expand-icon">+</span>
+</summary>
+<p>Question foundational beliefs. <strong>Library:</strong> treat access to knowledge as a shared responsibility. <span class="watch-note">Ask: which existing rules depend on a different belief?</span>
+</p>
+</details>
+        <details class="ladder-row deep" name="leverage">
+<summary>
+<span class="ladder-number">01</span>
+<span>Freedom from paradigms</span>
+<span class="expand-icon">+</span>
+</summary>
+<p>Hold every worldview provisionally. <strong>Library:</strong> stay open to different ways of supporting learning. <span class="watch-note">Ask: what evidence would change the library’s view of its role?</span>
+</p>
+</details>
       </div>
-      <p class="source-note">Order adapted from Meadows’ <a href="https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/" target="_blank" rel="noopener noreferrer">Leverage Points: Places to Intervene in a System ↗</a>. Library examples are original illustrations, not claims about particular policies.</p>
-      <div class="lesson-end"><button class="complete-button" data-complete="leverage" aria-pressed="false">Mark as explored <span aria-hidden="true">✓</span></button><a href="#traps">Next: System traps <span aria-hidden="true">→</span></a></div>
-    </section>
-
-    <section class="lesson page-section" id="traps" aria-labelledby="traps-title">
-      <div class="lesson-heading"><span class="chapter-number">05</span><div><p class="eyebrow">PATTERNS TO RECOGNIZE</p><h2 id="traps-title">System traps</h2></div></div>
-      <p class="lesson-lead">New characters. Familiar plot.</p>
-      <div class="lesson-copy"><p>Different systems can produce surprisingly similar trouble. These recurring structures are often called archetypes. Seeing the pattern helps us examine incentives and relationships instead of simply blaming the people involved.</p><p>Meadows describes eight traps and opportunities. Open each field note for an everyday example and a possible way to change the pattern.</p></div>
-      <div class="trap-grid">
-        <details class="trap-card" open><summary><span class="trap-mark" aria-hidden="true">⇄</span><h3>Policy resistance</h3><p>Competing goals cancel out change.</p><span class="expand-icon">+</span></summary><div class="trap-body"><p>A team adds approvals to reduce errors; colleagues invent workarounds to meet deadlines.</p><p><strong>A way out:</strong> Bring the parties together to design for both speed and quality.</p></div></details>
-        <details class="trap-card"><summary><span class="trap-mark" aria-hidden="true">◎</span><h3>Tragedy of the commons</h3><p>Private gains, shared depletion.</p><span class="expand-icon">+</span></summary><div class="trap-body"><p>Everyone books extra time in a shared studio, leaving it unavailable when others need it.</p><p><strong>A way out:</strong> Agree on fair access, visible usage, and shared stewardship.</p></div></details>
-        <details class="trap-card"><summary><span class="trap-mark" aria-hidden="true">↘</span><h3>Drift to low performance</h3><p>Lower results become the new normal.</p><span class="expand-icon">+</span></summary><div class="trap-body"><p>A service misses its response target, then keeps weakening the target to match its results.</p><p><strong>A way out:</strong> Anchor standards to purpose and learn from better performance.</p></div></details>
-        <details class="trap-card"><summary><span class="trap-mark" aria-hidden="true">⇈</span><h3>Escalation</h3><p>Each side’s defense fuels the other.</p><span class="expand-icon">+</span></summary><div class="trap-body"><p>Two cafés repeatedly undercut each other’s prices until neither can cover its costs.</p><p><strong>A way out:</strong> Stop matching every move; compete on distinct strengths.</p></div></details>
-        <details class="trap-card"><summary><span class="trap-mark" aria-hidden="true">↗</span><h3>Success to the successful</h3><p>Advantage earns more advantage.</p><span class="expand-icon">+</span></summary><div class="trap-body"><p>The busiest club gets the most funding, leaving newer clubs little chance to attract members.</p><p><strong>A way out:</strong> Provide entry support and multiple paths to resources.</p></div></details>
-        <details class="trap-card"><summary><span class="trap-mark" aria-hidden="true">⟳</span><h3>Shifting the burden</h3><p>Relief displaces lasting capacity.</p><span class="expand-icon">+</span></summary><div class="trap-body"><p>A manager rescues every difficult project; the team never gets to develop its own judgment.</p><p><strong>A way out:</strong> Pair temporary help with practice, ownership, and a plan to reduce dependence.</p></div></details>
-        <details class="trap-card"><summary><span class="trap-mark" aria-hidden="true">⌁</span><h3>Rule beating</h3><p>The letter of a rule defeats its intent.</p><span class="expand-icon">+</span></summary><div class="trap-body"><p>A support team closes tickets prematurely to satisfy a resolution quota.</p><p><strong>A way out:</strong> Redesign the rule around whether customers’ problems are actually resolved.</p></div></details>
-        <details class="trap-card"><summary><span class="trap-mark" aria-hidden="true">⊙</span><h3>Seeking the wrong goal</h3><p>The metric replaces the purpose.</p><span class="expand-icon">+</span></summary><div class="trap-body"><p>A learning app maximizes time on screen, even when shorter sessions teach more.</p><p><strong>A way out:</strong> Evaluate learning and retention, and keep questioning what counts as success.</p></div></details>
+<p class="source-note">Adapted from <a href="https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/">Meadows’ essay on leverage points</a>. The grouping and library examples are this guide’s illustrations. They do not describe a specific library.</p>
+<div class="field-question">
+<span class="eyebrow">IN THE FIELD</span>
+<p>
+<strong>Compare two interventions.</strong> One changes a quantity. Another changes information, a rule, or a goal. Name who could make each change and what behavior it would encourage.</p>
+</div>
+<a class="next-link" href="#traps">Next / System traps <span aria-hidden="true">→</span>
+</a>
+</section>
+<section class="lesson page-section" id="traps" aria-labelledby="traps-title">
+<div class="lesson-heading">
+<span class="chapter-number">06</span>
+<p class="eyebrow">FIELD NOTE / SYSTEM TRAPS</p>
+</div>
+<h2 id="traps-title">Different people. The same pattern.</h2>
+<div class="lesson-copy">
+<p>When a problem survives repeated attempts to fix it, look for the structure that recreates it. Competing goals, shared resources, and incentives can make sensible individual choices produce a poor result together.</p>
+<p>Use the symptoms below to choose a pattern to investigate. Each note gives an example, a possible intervention, and a question to check your explanation. The trap names follow the book; the examples are original.</p>
+</div>      <div class="trap-grid">
+        <details class="trap-card" name="traps">
+<summary>
+<span class="trap-mark" aria-hidden="true">⇄</span>
+<h3>Policy resistance</h3>
+<p>Competing goals cancel out change.</p>
+<span class="expand-icon">+</span>
+</summary>
+<div class="trap-body">
+<p>A team adds approvals to reduce errors; colleagues invent workarounds to meet deadlines.</p>
+<p>
+<strong>Try:</strong> Bring the parties together to design for both speed and quality.</p>
+<p>
+<strong>Check:</strong> Which goal makes each workaround sensible to the person using it?</p>
+</div>
+</details>
+        <details class="trap-card" name="traps">
+<summary>
+<span class="trap-mark" aria-hidden="true">◎</span>
+<h3>Tragedy of the commons</h3>
+<p>Private gains, shared depletion.</p>
+<span class="expand-icon">+</span>
+</summary>
+<div class="trap-body">
+<p>Each team reserves extra time in a shared studio as insurance. Together they leave too little usable time for others.</p>
+<p>
+<strong>Try:</strong> Agree on fair access, visible usage, and shared stewardship.</p>
+<p>
+<strong>Check:</strong> Does anyone experience the full cost of using more of the shared resource?</p>
+</div>
+</details>
+        <details class="trap-card" name="traps">
+<summary>
+<span class="trap-mark" aria-hidden="true">↘</span>
+<h3>Drift to low performance</h3>
+<p>Lower results become the new normal.</p>
+<span class="expand-icon">+</span>
+</summary>
+<div class="trap-body">
+<p>A service misses its response target, then keeps weakening the target to match its results.</p>
+<p>
+<strong>Try:</strong> Anchor standards to purpose and learn from better performance.</p>
+<p>
+<strong>Check:</strong> Is the team changing its work, or changing the definition of acceptable work?</p>
+</div>
+</details>
+        <details class="trap-card" name="traps">
+<summary>
+<span class="trap-mark" aria-hidden="true">⇈</span>
+<h3>Escalation</h3>
+<p>Each side’s defense fuels the other.</p>
+<span class="expand-icon">+</span>
+</summary>
+<div class="trap-body">
+<p>Two cafés repeatedly undercut each other’s prices until neither can cover its costs.</p>
+<p>
+<strong>Try:</strong> Stop matching every move; compete on distinct strengths.</p>
+<p>
+<strong>Check:</strong> Is each new move a response to the other side’s last move?</p>
+</div>
+</details>
+        <details class="trap-card" name="traps">
+<summary>
+<span class="trap-mark" aria-hidden="true">↗</span>
+<h3>Success to the successful</h3>
+<p>Advantage earns more advantage.</p>
+<span class="expand-icon">+</span>
+</summary>
+<div class="trap-body">
+<p>The busiest club gets the most funding, leaving newer clubs little chance to attract members.</p>
+<p>
+<strong>Try:</strong> Provide entry support and multiple paths to resources.</p>
+<p>
+<strong>Check:</strong> Does today’s allocation make yesterday’s winners more likely to win again?</p>
+</div>
+</details>
+        <details class="trap-card" name="traps">
+<summary>
+<span class="trap-mark" aria-hidden="true">⟳</span>
+<h3>Shifting the burden</h3>
+<p>Relief displaces lasting capacity.</p>
+<span class="expand-icon">+</span>
+</summary>
+<div class="trap-body">
+<p>A manager rescues every difficult project; the team never gets to develop its own judgment.</p>
+<p>
+<strong>Try:</strong> Pair temporary help with practice, ownership, and a plan to reduce dependence.</p>
+<p>
+<strong>Check:</strong> Is the team becoming more able to act without the rescuer?</p>
+</div>
+</details>
+        <details class="trap-card" name="traps">
+<summary>
+<span class="trap-mark" aria-hidden="true">⌁</span>
+<h3>Rule beating</h3>
+<p>The letter of a rule defeats its intent.</p>
+<span class="expand-icon">+</span>
+</summary>
+<div class="trap-body">
+<p>A support team closes tickets prematurely to satisfy a resolution quota.</p>
+<p>
+<strong>Try:</strong> Redesign the rule around whether customers’ problems are actually resolved.</p>
+<p>
+<strong>Check:</strong> Can the target be met while the original problem remains?</p>
+</div>
+</details>
+        <details class="trap-card" name="traps">
+<summary>
+<span class="trap-mark" aria-hidden="true">⊙</span>
+<h3>Seeking the wrong goal</h3>
+<p>The metric replaces the purpose.</p>
+<span class="expand-icon">+</span>
+</summary>
+<div class="trap-body">
+<p>A learning app maximizes time on screen, even when shorter sessions teach more.</p>
+<p>
+<strong>Try:</strong> Evaluate learning and retention, and keep questioning what counts as success.</p>
+<p>
+<strong>Check:</strong> If this metric improved, could the intended outcome still get worse?</p>
+</div>
+</details>
       </div>
-      <div class="takeaway"><span aria-hidden="true">↳</span><p><strong>Use patterns as questions, not diagnoses.</strong> A real situation may contain several traps. Listen to the people inside it before deciding what needs to change.</p></div>
-      <div class="lesson-end"><button class="complete-button" data-complete="traps" aria-pressed="false">Mark as explored <span aria-hidden="true">✓</span></button><a href="#dancing">Next: Dancing with systems <span aria-hidden="true">→</span></a></div>
-    </section>
-
-    <section class="lesson page-section" id="dancing" aria-labelledby="dancing-title">
-      <div class="lesson-heading"><span class="chapter-number">06</span><div><p class="eyebrow">FROM KNOWING TO LIVING</p><h2 id="dancing-title">Dancing with systems</h2></div></div>
-      <p class="lesson-lead">Understanding is an invitation to participate more wisely.</p>
-      <div class="lesson-copy"><p>Systems thinking doesn’t give us perfect prediction or control. Meadows’ closing guidance asks for a different posture: observe carefully, learn in public, and remain accountable for what our actions set in motion.</p><p>These six practices gather some of that guidance into everyday starting points. They are an invitation to keep learning, not a complete list of her principles.</p></div>
-      <div class="practice-grid">
-        <article><span>01 / OBSERVE</span><h3>Learn the rhythm first.</h3><p>Watch behavior over time before intervening. Ask what the system already does well.</p></article>
-        <article><span>02 / STAY CURIOUS</span><h3>Make your assumptions visible.</h3><p>Share your model, invite corrections, and treat being surprised as useful information.</p></article>
-        <article><span>03 / KEEP LISTENING</span><h3>Let information travel.</h3><p>Protect honest feedback. Put consequences within sight of those making decisions.</p></article>
-        <article><span>04 / WIDEN THE VIEW</span><h3>Care beyond the boundary.</h3><p>Consider distant places, future people, and effects outside your department or discipline.</p></article>
-        <article><span>05 / HONOR THE WHOLE</span><h3>Notice what numbers miss.</h3><p>Make room for trust, dignity, resilience, and other qualities that resist easy measurement.</p></article>
-        <article><span>06 / KEEP ADAPTING</span><h3>Hold purpose, revise the path.</h3><p>Experiment, watch the response, and adjust your actions while staying grounded in your values.</p></article>
-      </div>
-      <div class="reflection"><span class="eyebrow">TAKE IT INTO YOUR WORLD</span><h3>A small practice for today.</h3><p id="reflection-prompt">Choose something that keeps happening in your life. What relationships might be producing the pattern?</p><button class="button light" id="reflection-next">Another question <span aria-hidden="true">↗</span></button><span class="reflection-count" id="reflection-count">01 / 06</span></div>
-      <p class="source-note">Explore Meadows’ fuller guidance in <a href="https://donellameadows.org/archives/dancing-with-systems/" target="_blank" rel="noopener noreferrer">Dancing With Systems ↗</a>.</p>
-      <div class="lesson-end"><button class="complete-button" data-complete="dancing" aria-pressed="false">Mark as explored <span aria-hidden="true">✓</span></button><a href="#overview">Return to the big picture <span aria-hidden="true">↑</span></a></div>
-      <p class="completion-message" id="completion-message" role="status" hidden>All six ideas explored. The next step is outside this guide: notice a system, sketch its connections, and see what you learn.</p>
-    </section>
-
-    <footer id="about"><div class="footer-main"><div><img src="assets/favicon.svg" alt="" width="38" height="38"><h2>A starting point.<br>Not the whole story.</h2></div><div><p>This independent field guide is inspired by <cite>Thinking in Systems: A Primer</cite> by Donella H. Meadows, edited by Diana Wright (Chelsea Green Publishing, 2008).</p><p>Explanations, examples, and illustrations are original educational interpretations. The models are deliberately simplified. For the depth, nuance, and full argument, read the book.</p><a href="https://donellameadows.org/systems-thinking-resources/" target="_blank" rel="noopener noreferrer">Visit the Donella Meadows Project <span aria-hidden="true">↗</span></a></div></div><div class="footer-bottom"><span>Made for curious minds. Connected to a bigger world.</span><a href="#overview">Back to top ↑</a></div></footer>
-  </main>
-  <noscript><div class="noscript-note">The full guide is readable without JavaScript. Enable JavaScript to use the experiments and save your exploration progress.</div></noscript>
+<div class="field-question">
+<span class="eyebrow">IN THE FIELD</span>
+<p>
+<strong>Use a trap as a question.</strong> Who benefits from the current pattern? Who pays the cost? Ask the people involved before deciding you have found the explanation.</p>
+</div>
+<a class="next-link" href="#practice">Next / Use the guide <span aria-hidden="true">→</span>
+</a>
+</section>
+<section class="lesson page-section" id="practice" aria-labelledby="practice-title">
+<div class="lesson-heading">
+<span class="chapter-number">07</span>
+<p class="eyebrow">FIELD NOTE / USE THE GUIDE</p>
+</div>
+<h2 id="practice-title">Put a real problem on paper.</h2>
+<div class="lesson-copy">
+<p>Start with something specific that keeps happening. “Work is stressful” is broad. “Our queue doubles every Friday” gives you a pattern to examine.</p>
+<p>These notes are a working explanation. Leave gaps where you do not know. Start with a conversation or a measurement if you lack evidence for a change.</p>
+</div>
+<form id="field-sheet" class="field-sheet">
+<div class="sheet-header">
+<p class="eyebrow">YOUR FIELD NOTES</p>
+<span id="sheet-count" class="js-control">1 of 4</span>
+</div>
+<nav class="sheet-nav js-control" aria-label="Worksheet questions" id="sheet-nav">
+</nav>
+<fieldset class="sheet-step">
+<legend>
+<span>01</span> What keeps happening?</legend>
+<label for="pattern">Describe a recurring pattern.</label>
+<textarea id="pattern" name="pattern" rows="4" placeholder="Example: Our queue doubles every Friday, then shrinks by Wednesday.">
+</textarea>
+</fieldset>
+<fieldset class="sheet-step">
+<legend>
+<span>02</span> What accumulates?</legend>
+<label for="accumulation">Separate a stock from its flows.</label>
+<textarea id="accumulation" name="accumulation" rows="4" placeholder="Name the stock and its units. What adds to it? What removes it?">
+</textarea>
+</fieldset>
+<fieldset class="sheet-step">
+<legend>
+<span>03</span> What comes back? What takes time?</legend>
+<label for="connections">Trace a loop and a delay.</label>
+<textarea id="connections" name="connections" rows="4" placeholder="Which consequence returns to affect its cause? How long before a change becomes visible?">
+</textarea>
+</fieldset>
+<fieldset class="sheet-step">
+<legend>
+<span>04</span> What will you test?</legend>
+<label for="experiment">Choose a change you can learn from.</label>
+<textarea id="experiment" name="experiment" rows="4" placeholder="Name a small change, what you will measure, and a review date. What result would make you stop or adjust?">
+</textarea>
+</fieldset>
+<div class="sheet-actions js-control">
+<button type="button" class="button quiet" id="sheet-back">Back</button>
+<button type="button" class="button primary" id="sheet-next">Next question →</button>
+</div>
+<p class="sheet-status" id="sheet-status" role="status">Write here, or use these questions in a notebook.</p>
+<div class="sheet-tools js-control">
+<button type="button" class="text-button" id="print-sheet">Print your field notes ↗</button>
+<button type="button" class="text-button" id="download-sheet">Download notes ↓</button>
+</div>
+<div class="print-notes" id="print-notes">
+</div>
+</form>
+<div class="practice-coda">
+<h3>Keep the model open to correction.</h3>
+<p>Track behavior over time. Ask whose view is missing. Watch what your change does beyond the boundary you drew. Revise the explanation when the evidence disagrees.</p>
+<p class="source-note">For Meadows’ fuller account of working with systems, read <a href="https://donellameadows.org/archives/dancing-with-systems/">Dancing With Systems</a>.</p>
+</div>
+<div class="field-question">
+<span class="eyebrow">IN THE FIELD</span>
+<p>
+<strong>Set a review date.</strong> Give the system enough time to respond. Check effects on people outside your original picture, as well as the result you intended.</p>
+</div>
+<a class="next-link" href="#overview">Next / The reading route <span aria-hidden="true">→</span>
+</a>
+</section>
+<footer id="about">
+<p class="eyebrow">THE BOOK BEHIND THE GUIDE</p>
+<div class="footer-main">
+<h2>Thinking in Systems:<br>
+<em>A Primer</em>
+</h2>
+<div>
+<p>Donella H. Meadows<br>Edited by Diana Wright<br>Chelsea Green Publishing · 2008</p>
+<p>This companion paraphrases the ideas and adds original examples and diagrams. The models are simplified teaching tools. Read the book for the full argument, its examples, and its limits. This site is unaffiliated with the author’s estate or publisher.</p>
+<div class="source-links">
+<a href="https://www.chelseagreen.com/product/thinking-in-systems/">The book at Chelsea Green ↗</a>
+<a href="https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/">Leverage Points / Meadows’ essay ↗</a>
+<a href="https://donellameadows.org/archives/dancing-with-systems/">Dancing With Systems / Meadows’ essay ↗</a>
+<a href="https://donellameadows.org/systems-thinking-resources/">More systems thinking resources ↗</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>Observe. Sketch. Test. Revise.</span>
+<a href="#overview">Back to the beginning ↑</a>
+</div>
+</footer>
+</main>
+</div>
+<noscript>
+<p class="noscript-note">The guide and expandable notes work without JavaScript. The experiments need JavaScript. Use the worksheet questions in a notebook.</p>
+</noscript>
 </body>
 </html>

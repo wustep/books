@@ -1,39 +1,39 @@
 # Thinking in Systems — a field guide
 
-An independent, illustrated microsite inspired by Donella H. Meadows’ *Thinking in Systems: A Primer*, edited by Diana Wright (2008). Original explanations and examples cover stocks and flows, reinforcing and balancing feedback, delays, all twelve leverage points, eight system traps, and practices for living with systems. Source links appear in the guide.
+An independent companion to Donella H. Meadows’ *Thinking in Systems: A Primer*, edited by Diana Wright (2008). Seven field notes cover stocks and flows, feedback, delays, resilience, leverage points, system traps, and application. The explanations, backlog diagram, library examples, and capacity sketch are original teaching material. Primary essays and the publisher are linked in the guide. No quotations or page-number claims.
 
-## Open or run
+## Run and ship
 
-Open `index.html` directly in a browser. All assets are local, with no runtime dependencies, remote fonts, analytics, or build requirement. JavaScript adds experiments and locally saved exploration progress; the text, links, and expandable notes also work without it.
-
-For a local HTTP server, use Node.js 20 or later:
+With Node.js 20 or later, from this directory:
 
 ```sh
 npm run dev
-# http://localhost:4173
-```
-
-Set `PORT` to change the port. The development server binds to localhost.
-
-## Build and deploy
-
-```sh
+# http://127.0.0.1:4173
 npm test
 npm run build
 ```
 
-Upload the contents of `dist/` to any static host. Relative asset paths support subdirectory deployment, including GitHub Pages. No package installation is required.
+`npm start` also serves the site. Set `PORT` for a different port or `SITE_DIR=dist` to serve the build. Upload `dist/` to a static host. Relative asset paths support subdirectory hosting. You can also open `index.html` directly. No package installation or runtime network access is required.
 
-For GitHub Pages, after merging the PR, choose **Settings → Pages → Deploy from a branch → main → / (root)**. The repository root is also a complete static site. This project does not merge or enable deployment automatically.
+## Reading and interaction
 
-## Teaching models
+- **Reservoir:** begins at 50 L, with a 100 L capacity. Adjustable rates are L/min; one click advances one minute, and running advances one minute per second. Arrival precedes drainage in each step. Unavailable water limits drainage; excess spills over. Run pauses when hidden or offscreen.
+- **Feedback:** compares growth of 5.5% per step with a correction of 10% of the gap to 80. Each begins at 10 and runs for 40 steps. The loop labels describe the equations, not a real forecasting model.
+- **Delay:** begins at 20; each step adjusts by 12% of the perceived gap to 60. Readings can be delayed by 0–10 steps; the stock is bounded to 0–100. This is a simplified controller.
+- **Resilience sketch:** compares 8 planned hours with 6 planned hours plus a 2-hour reserve against the same 8-hour capacity. An optional 2-hour disturbance shows the tradeoff. It is not a staffing forecast.
+- **Field notes:** four questions, then an all-notes review. Drafts use `thinking-in-systems:field-notes:v1` in local storage. Nothing is transmitted. When storage is blocked, notes remain available for the visit and can be downloaded. Print generates readable paragraphs so long notes are not clipped by textareas.
 
-- **Reservoir:** a 100-liter stock starts at 50 liters; sliders set rates in liters per simulated minute. One running second advances one minute. Drainage is limited by available water; excess spills over. The pipe label reports available outflow, while the control shows requested outflow. Run, pause, step, and reset are supported. The model pauses when hidden or scrolled out of view.
-- **Feedback:** compares unrestricted 5.5% growth per step against a correction of 10% of the remaining gap to a target of 80. These are conceptual examples, not forecasts.
-- **Delay:** adjusts a stock by 12% of the perceived gap to 60 each step, with readings delayed by 0–10 steps and a stock bounded to 0–100. Longer delays illustrate overshoot and oscillation.
+Without JavaScript, all lessons, the reading route, native reference disclosures, and four worksheet inputs remain available. Model controls are disabled. Reduced motion presents settled diagrams and model states without transitions. The site supports keyboard focus and light print layouts.
 
-The deterministic models are in `models.js` and tested with Node’s built-in test runner. `app.js` connects them to accessible native controls and SVG charts. `styles.css` includes mobile layouts, keyboard focus states, reduced-motion support, and print styles. Progress uses a single versioned local-storage key and falls back to in-memory state when storage is blocked.
+## Craft and verification
 
-The visual system uses OKLCH tokens for deep-ink surfaces, teal actions and connections, and cyan chart accents. Inline diagrams share those tokens; print styles switch to light surfaces and dark text. `PRODUCT.md` records the guide’s design context for Impeccable.
+[CRAFT.md](CRAFT.md) records the initial critique, three Interface Craft implementation passes, the visual pass, and three content passes. `app.js` contains the animation storyboards and named timing/configuration values. `motion.js` samples physical damped springs; the water spring preserves tank bounds.
 
-The guide is unaffiliated with the author’s estate or publisher and is a starting point for reading the book, not a substitute for it.
+`npm test` runs deterministic model and spring tests with Node’s built-in runner. An optional Playwright integration check covers responsive layouts, real controls, worksheet persistence/export, blocked storage, no-JS reading, reduced motion, print, and asset/anchor integrity:
+
+```sh
+node tests/browser-check.mjs --url=http://127.0.0.1:4173
+# Requires Playwright installed separately; --module=/absolute/path/to/index.mjs is supported.
+```
+
+Newsreader and Public Sans are served from `assets/fonts/`, with their SIL Open Font License files. Diagrams and the favicon are local SVG. No analytics, third-party scripts, or visible debug tools are included.

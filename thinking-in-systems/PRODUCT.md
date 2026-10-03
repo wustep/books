@@ -1,44 +1,23 @@
 # Thinking in Systems
 
-## Register
+A static editorial companion for a reader investigating a recurring problem.
 
-brand
+The reading route moves from accumulations to feedback, delays, resilience,
+interventions, traps, and the reader’s own field notes. A backlog supplies the
+opening causal example. Three small deterministic models expose mechanisms;
+a capacity sketch explains a reserve’s purpose. Reference detail opens on demand.
 
-## Users
+The visual direction is an annotated technical notebook: warm paper, dark ink,
+vermilion for interpretation, and blue for water and measured behavior. Newsreader
+sets the editorial type; Public Sans supports sustained reading and controls.
+Diagrams do the teaching. Avoid dashboard cards, reward counters, decorative
+photos, vague slogans, and motion that competes with the explanation.
 
-Curious readers exploring Donella Meadows’ systems thinking through a self-paced,
-illustrated field guide. Readers can follow the six concepts in order or move
-between lessons, on a desktop or phone.
+Animation follows readable storyboards with named timing constants and a single
+stage per sequence. Use physical springs and honor reduced motion. Keep native
+anchors, buttons, ranges, details, textareas, and visible keyboard focus. Reading
+and all worksheet questions remain available without JavaScript. Local drafts
+must report storage failures honestly, and exports must preserve every answer.
 
-## Product Purpose
-
-Make stocks, flows, feedback, delays, leverage points, and system traps tangible
-through original explanations and small interactive teaching models. Encourage
-observation and further reading; this independent guide is not a substitute for
-the book.
-
-## Brand Personality
-
-Scholarly, precise, connected. The requested deep-ink and teal/cyan direction
-evokes a reader studying a scientific diagram beside an open book at a desk.
-Preserve the local serif/sans typography and make the diagrams central.
-
-## Anti-references
-
-Cream botanical styling, warm parchment surfaces, decorative rainbow accents,
-and dashboards that crowd out the reading experience.
-
-## Design Principles
-
-- Explain relationships through diagrams and experiments.
-- Give sustained reading a calm, legible setting.
-- Use consistent visual cues for controls, connections, and progress.
-- Keep simplified models honest about their assumptions.
-- Keep every lesson usable without JavaScript or persistent storage.
-
-## Accessibility & Inclusion
-
-Retain native keyboard controls, visible focus, labeled charts, mobile navigation,
-reduced-motion support, and print styles. Target WCAG AA contrast (4.5:1 for body
-text, 3:1 for large text and essential graphical controls). Labels, line patterns,
-and pressed states convey information alongside color.
+Paraphrase the book. Label original examples and simplified models. Link primary
+sources. Do not invent quotations, page numbers, or stories from the author.
