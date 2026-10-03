@@ -2,7 +2,9 @@
 
 An independent educational microsite for the book by Rosamund Stone Zander and
 Benjamin Zander. Twelve teaching pages pair original explanations with invented
-everyday examples, short exercises, and a private browser notebook.
+everyday examples, guided exercises with clear outputs, and a private browser notebook.
+The home includes an interactive frame experiment; every practice remains readable
+without JavaScript. See `CRAFT.md` for the redesign passes and critiques.
 
 ## Run locally
 
@@ -55,7 +57,8 @@ Screenshots are written to ignored `test-results/` for visual inspection.
   fragments, HTML landmarks, metadata, and notebook data integrity.
 - Browser checks cover all sixteen content routes, automated axe WCAG A/AA
   checks, responsive widths from 320 to 1440px, combined filtering and search,
-  note persistence/export/clear, keyboard access, reduced motion, no-JavaScript
+  note persistence/export/clear, all twelve guided exercises, motion cancellation,
+  keyboard access, reduced motion, no-JavaScript
   reading, storage failures, and deployment beneath a path prefix.
 - Automated accessibility checks supplement visual and keyboard inspection;
   they are not a claim of full WCAG certification.
@@ -66,14 +69,15 @@ Screenshots are written to ignored `test-results/` for visual inspection.
 | --- | --- |
 | `src/practices.mjs` | Original teaching copy, canonical practice names, source links |
 | `src/templates.mjs` | Semantic page templates and relative navigation |
-| `src/art.mjs` | Original SVG gesture and identity mark |
+| `src/art.mjs` | Original open-frame identity mark |
 | `public/styles.css` | Design tokens, layouts, responsive/print/motion states |
-| `public/app.js` | Progressive enhancements and notebook interactions |
+| `public/app.js` | Guided practice, filtering, and notebook interactions |
+| `public/motion.js` | Storyboard, stage sequencing, sampled physical springs |
 | `public/notebook-state.js` | Validated, versioned browser storage and text export |
 | `scripts/` | Static generator and development server |
 | `tests/` | Content/storage tests and browser smoke/a11y suite |
 | `PRODUCT.md`, `DESIGN.md` | Product intent and design decisions |
-| `.impeccable/` | Live configuration and validation record |
+| `CRAFT.md` | Pass-by-pass redesign critique and validation record |
 
 ## Content and privacy
 

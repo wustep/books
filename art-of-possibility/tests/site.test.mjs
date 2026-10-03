@@ -13,7 +13,7 @@ test('each practice has a complete, unique teaching route and valid cross-refere
     assert.equal(practice.number, index + 1);
     assert.equal(practice.steps.length, 3);
     assert.ok(practices.some(p => p.slug === practice.related));
-    for (const field of ['idea', 'explanation', 'scenario', 'oldFrame', 'newFrame', 'prompt', 'nuance']) assert.ok(practice[field].length > 20, `${practice.slug}: ${field}`);
+    for (const field of ['idea', 'explanation', 'scenario', 'oldFrame', 'newFrame', 'prompt', 'nuance', 'outcome']) assert.ok(practice[field].length > 20, `${practice.slug}: ${field}`);
   }
 });
 
