@@ -3,7 +3,7 @@
 A practical book companion with the feel of a working reading copy. Cream paper,
 forest ink, and citron marks keep the page quiet and the choices visible.
 
-Literata carries headlines and explanations. Bricolage carries interface copy.
+Literata carries headlines and explanations. Source Sans 3 carries interface copy.
 Small monospaced labels distinguish navigation and estimates from teaching.
 Both bundled fonts are local and retain their OFL licenses.
 

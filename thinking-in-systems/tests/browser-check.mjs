@@ -151,7 +151,7 @@ try {
   assert.equal(await staticPage.locator('.trap-card').first().getAttribute('open'), '');
   await staticPage.screenshot({ path: `${output}/${phase}-nojs.png` });
   await noJS.close();
-  const fonts = await page.evaluate(() => ({ serif: document.fonts.check('16px Newsreader'), sans: document.fonts.check('16px "Public Sans"') }));
+  const fonts = await page.evaluate(() => ({ serif: document.fonts.check('16px "Source Serif 4"'), sans: document.fonts.check('16px "Public Sans"') }));
   assert.deepEqual(fonts, { serif: true, sans: true });
   assert.ok(requests.every((url) => new URL(url).origin === new URL(base).origin), 'No runtime remote requests');
   assert.deepEqual(errors, []);
