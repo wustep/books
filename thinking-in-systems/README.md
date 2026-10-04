@@ -36,4 +36,4 @@ node tests/browser-check.mjs --url=http://127.0.0.1:4173
 # Requires Playwright installed separately; --module=/absolute/path/to/index.mjs is supported.
 ```
 
-Newsreader and Public Sans are served from `assets/fonts/`, with their SIL Open Font License files. Diagrams and the favicon are local SVG. No analytics, third-party scripts, or visible debug tools are included.
+Source Serif 4 and Public Sans are served from `assets/fonts/`, with their SIL Open Font License files. Diagrams and the favicon are local SVG. No analytics, third-party scripts, or visible debug tools are included.

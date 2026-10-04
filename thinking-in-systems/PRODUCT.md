@@ -8,7 +8,7 @@ opening causal example. Three small deterministic models expose mechanisms;
 a capacity sketch explains a reserve’s purpose. Reference detail opens on demand.
 
 The visual direction is an annotated technical notebook: warm paper, dark ink,
-vermilion for interpretation, and blue for water and measured behavior. Newsreader
+vermilion for interpretation, and blue for water and measured behavior. Source Serif 4
 sets the editorial type; Public Sans supports sustained reading and controls.
 Diagrams do the teaching. Avoid dashboard cards, reward counters, decorative
 photos, vague slogans, and motion that competes with the explanation.

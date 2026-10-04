@@ -12,7 +12,7 @@ function shell({ title, description, body, base = './', active = '', className =
 <title>${escape(title)}${active === 'home' ? '' : ' · The Art of Possibility'}</title>
 <meta name="description" content="${escape(description)}"><meta name="theme-color" content="#f5f3e9">
 <meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:type" content="website">
-<link rel="icon" href="${base}favicon.svg" type="image/svg+xml"><link rel="preload" href="${base}fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="${base}favicon.svg" type="image/svg+xml"><link rel="preload" href="${base}fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${base}styles.css"><script type="module" src="${base}app.js"></script></head>
 <body class="${className}"><a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header wrap"><a class="brand" href="${base}" aria-label="The Art of Possibility — home">${mark}<span>The Art of<br>Possibility<span class="brand-period">.</span></span></a>

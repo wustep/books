@@ -1,9 +1,9 @@
-@font-face{font-family:Bricolage;src:url('./fonts/bricolage-latin.woff2') format('woff2');font-weight:400 800;font-style:normal;font-display:swap}
+@font-face{font-family:'Source Sans 3';src:url('./fonts/source-sans-3-latin.woff2') format('woff2');font-weight:200 900;font-style:normal;font-display:swap}
 @font-face{font-family:Literata;src:url('./fonts/literata-latin.woff2') format('woff2');font-weight:400 600;font-style:normal;font-display:swap}
 :root{
   color-scheme:light;--canvas:#f5f3e9;--ink:#263b2f;--muted:#586253;--accent:#304b38;--accent-hover:#1b3022;
   --gold:#e5ed7e;--gold-light:#eef1c5;--surface:#e9ecdf;--line:#c8ccba;--control-line:#78836d;
-  --display:Literata,Georgia,serif;--reading:Literata,Georgia,serif;--sans:Bricolage,Arial,sans-serif;
+  --display:Literata,Georgia,serif;--reading:Literata,Georgia,serif;--sans:'Source Sans 3',Arial,sans-serif;
   --label:'SFMono-Regular',Consolas,monospace;--gutter:clamp(1.25rem,5vw,4.5rem);--ease:cubic-bezier(.22,1,.36,1);
   --feedback-duration:180ms;--z-dialog:20;--z-skip:30;
 }
